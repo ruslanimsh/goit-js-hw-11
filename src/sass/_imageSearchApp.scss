@@ -1,6 +1,5 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .search-toolbar {
@@ -41,11 +40,11 @@ body {
 }
 
 .search-form-button:hover {
-  background: rgba(195, 194, 194, 0.8078431373);
+  background: #c3c2c2ce;
 }
 
 .search-form::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -62,6 +61,7 @@ body {
   flex-wrap: wrap;
   margin-right: 20px;
 }
+
 
 .photo {
   display: block;
@@ -82,7 +82,8 @@ body {
   border-right: 1px solid #c3c2c2;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .info-item {
@@ -90,6 +91,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  // justify-content: center;
   padding: 0 12px;
 }
 
@@ -103,10 +105,11 @@ body {
   padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
+  // font-weight: bold;
   font-size: large;
   color: #fff;
   background-color: #4056b4;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-}/*# sourceMappingURL=index.css.map */
+}
