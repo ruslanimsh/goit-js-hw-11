@@ -18,7 +18,7 @@ btnSearch.addEventListener('click', e => {
   cleanGallery();
   const trimmedValue = input.value.trim();
   if (trimmedValue !== '') {
-    fetchImages(trimmedValue, pageNumber).then(foundData => {
+     fetchImages(trimmedValue, pageNumber).then(foundData => {
       if (foundData.hits.length === 0) {
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
@@ -38,17 +38,18 @@ btnSearch.addEventListener('click', e => {
 btnLoadMore.addEventListener('click', () => {
   pageNumber++;
   const trimmedValue = input.value.trim();
+  const page = 40;
   btnLoadMore.style.display = 'none';
   fetchImages(trimmedValue, pageNumber).then(foundData => {
-    if (foundData.hits.length === 0) {
-      Notiflix.Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
+    if (foundData.totalHits <= pageNumber * page) {
+      Notiflix.Notify.info(
+        "We're sorry, but you've reached the end of search results."
       );
     } else {
       renderImageList(foundData.hits);
-      Notiflix.Notify.success(
-        `Hooray! We found ${foundData.totalHits} images.`
-      );
+      // Notiflix.Notify.success(
+      //   `Hooray! We found ${foundData.totalHits} images.`
+      // );
       btnLoadMore.style.display = 'block';
     }
   });

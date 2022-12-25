@@ -15,3 +15,4 @@ export const fetchImages = async (inputValue, pageNr) => {
       console.error(error);
     });
 };
+
